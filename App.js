@@ -1,15 +1,15 @@
 import React from 'react';
+import {NativeBaseProvider, Box} from 'native-base';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from './src/Home';
+import NavigationComponent from './src/Navigation/Navigation';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <NativeBaseProvider>
+      <NavigationContainer>
+        <NavigationComponent />
+      </NavigationContainer>
+    </NativeBaseProvider>
   );
 };
 
